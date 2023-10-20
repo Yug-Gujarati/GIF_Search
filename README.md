@@ -2,3 +2,4 @@
 
 Search gifs from [Giphy](https://giphy.com/) Api.
 "# GIF_Search" 
+"# GIF_App" 
