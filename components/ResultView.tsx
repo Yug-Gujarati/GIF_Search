@@ -6,21 +6,22 @@ import styles from '../pages/styles.module.css';
 // Define a custom component for displaying the result of GIFs
 const ResultView = ({ giphys }: { giphys: Giphy[] }) => {
   // Define a state variable for the favorite GIFs
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useState<Giphy[]>([]); // Initialize with an empty array
 
   // Define a function to handle the star button click event
   const handleStarClick = (gif: Giphy) => {
     // Check if the GIF is already in the favorites array
-    const isFavorite = favorites.includes(gif);
+    const isFavorite = favorites.some((f) => f.id === gif.id);
 
-    // If it is, remove it from the array
     if (isFavorite) {
-      setFavorites(favorites.filter((f: any) => f !== gif));
+      // If it's a favorite, remove it from the array
+      setFavorites(favorites.filter((f) => f.id !== gif.id));
     } else {
-      // If it is not, add it to the array
+      // If it's not a favorite, add it to the array
       setFavorites([...favorites, gif]);
     }
   };
+
 
   return (
     <div className="grid grid-cols-3 gap-4">

@@ -1,17 +1,12 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Link from 'next/link';
 import {
   ChangeEvent,
   ChangeEventHandler,
   FormEvent,
-  FormEventHandler,
-  ReactEventHandler,
-  SyntheticEvent,
   useState,
 } from 'react';
 import ResultView from '../components/ResultView';
-import Pagination from '../components/Pagination';
 import { search } from '../helpers/core';
 import styles from './styles.module.css';
 
